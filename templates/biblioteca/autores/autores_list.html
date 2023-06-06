@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    {% if authors %}
+        <table class="table table-striped my-5">
+            <thead>
+            <tr>
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>E-mail</td>
+                <td>Acciones</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for author in authors %}
+                <tr>
+                    <td>{{ author.id }}</td>
+                    <td>{{ author.nombre }}</td>
+                    <td>{{ author.apellidos }}</td>
+                    <td>{{ author.email }}</td>
+                    <td>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="{% url  url_names.update author.id %}">
+                                Editar
+                            </a>
+                            <a class="btn btn-danger" href="{% url  url_names.delete  author.id %}">
+                                Eliminar
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h1 class="pt-5">No hay registros de autores</h1>
+    {% endif %}
+{% endblock %}

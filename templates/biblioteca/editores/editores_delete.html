@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>¿Desea eliminar el registro del editor {{ editor.nombre }}?</p>
+        <button type="submit" class="btn btn-danger">
+            Sí, deseo eliminarlo
+        </button>
+        <a class="btn btn-primary" href="{% url url_names.read_all %}">
+            Cancelar
+        </a>
+    </form>
+{% endblock %}

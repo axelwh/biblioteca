@@ -1,0 +1,65 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">WISPHUB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+                    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#"
+                           role="button" aria-haspopup="true" aria-expanded="false">
+                            Editores
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'biblioteca:read_editors' %}">Listar (función)</a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:create_editor' %}">Registrar (función)</a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:clases_read_all_editors' %}">
+                                Listar (clases)
+                            </a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:clases_create_editor' %}">
+                                Registrar (clases)
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#"
+                           role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            Autores
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'biblioteca:read_authors' %}">Listar (función)</a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:create_author' %}">Registrar (función)</a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:clases_read_all_author' %}">
+                                Listar (clases)
+                            </a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:clases_create_author' %}">
+                                Registrar (clases)
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-uppercase" data-bs-toggle="dropdown" href="#"
+                           role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            Libros
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'biblioteca:read_books' %}">Listar(función)</a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:create_book' %}">Registrar(función)</a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:clases_read_all_books' %}">
+                                Listar (clases)
+                            </a>
+                            <a class="dropdown-item" href="{% url 'biblioteca:clases_create_book' %}">
+                                Registrar (clases)
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    {% if books %}
+        <table class="table table-striped my-5">
+            <thead>
+            <tr>
+                <td>#</td>
+                <td>Título</td>
+                <td>Portada</td>
+                <td>Autores</td>
+                <td>Editor</td>
+                <td>Acciones</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.titulo }}</td>
+                    <td>
+                        {% if book.portada %}
+                            <img width="50" height="50" src="{{ book.portada.url }}"/>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% for autor in book.autores.all %}
+                            {{ autor }}
+                            {% if forloop.last %}
+                            {% else %},
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ book.editor }}</td>
+                    <td>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary" href="{% url  url_names.update book.id %}">
+                                Editar
+                            </a>
+                            <a class="btn btn-danger" href="{% url  url_names.delete  book.id %}">
+                                Eliminar
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h1 class="pt-5">No hay registros de libros</h1>
+    {% endif %}
+{% endblock %}
